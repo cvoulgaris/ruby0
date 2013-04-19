@@ -1,5 +1,4 @@
 class Square
-  include Math
   attr_accessor :color, :side
 
   def initialize (side, color=:red)
