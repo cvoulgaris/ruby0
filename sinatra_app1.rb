@@ -58,12 +58,12 @@ get '/reverse' do
 	time = Time.now.strftime("%H:%m")
 	l = params[:blog].length
 	"
-	#{params[:blog]}
+	#{params[:blog].gsub(/\n/,'</br>')}
 
-	<h3 style='border: 2px yellow dashed;'>
-	The length of the text is #{l} characters including spaces.</br>
+	<h3 style='border: 2px blue dashed;'>
+	The length of the text is #{l} characters including spaces, plus each carriage return count as 2 more chars.</br>
+	Yes, of course we can filter spaces and \\n from chars counts. Maybe later</br>
 	It was sent on #{date} at #{time}</br>
-	Yeah, Yeah, I need to play around to show the blog's carriage returns correctly, yada yada.
 	</h3>
 	"
 end
